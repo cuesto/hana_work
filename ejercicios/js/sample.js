@@ -1,3 +1,17 @@
+//Only runs once DOM is ready
+$(document).ready(function(){
+	//When button with ID btn1 is pressed
+	$("#btn1").click(function(){
+		//change all test on h1 tag
+		$("h1").text("this is a jQuery test")
+	});
+
+	$("#btn2").click(function(){
+		$("h2").fadeOut();
+	});
+});
+
+
 //create new elements
 var newHeading = document.createElement("h1");
 var newParagraph = document.createElement("p");
