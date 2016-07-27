@@ -1,0 +1,5 @@
+host = "52.42.196.23";
+port = 50001;
+authType = none;
+useSSL = false;
+timeout = 0;
