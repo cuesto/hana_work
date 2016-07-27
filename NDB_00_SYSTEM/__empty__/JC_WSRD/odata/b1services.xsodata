@@ -1,3 +1,4 @@
+//http://52.42.196.23:8000/JC_WSRD/odata/b1services.xsodata/SalesByGroup?$format=json
 service  { 
 
 "_SYS_BIC"."JC_WSRD.model/JC_CA_SALES" as "SalesByGroup" keys ("GroupCode");
