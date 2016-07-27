@@ -15,7 +15,54 @@ $(document).ready(function(){
 		callENV()
 	});
 	
+	$("#btn4").click(function(){
+		callUDQ()
+	});
+	
+	
 });
+
+function callUDQ(){
+	$.ajax({
+		type: "POST",
+		url: "/sap/sbo/platform/query",
+		contentType: "application/json",
+		dataType: "json", 
+		data: JSON.stringify({
+			"type": "sql",
+			"category": "System",
+			"name": "Total Sales Amount",
+			"param": [],
+			"format": "JSON"}),
+			error: function (xhr, status, error){
+				alert("UDQ Failed: " + xhr.responseText);
+			},
+			success: function(json){
+				alert("UDQ Executed.");
+				displayResult(json.data[0]);
+			}
+	})
+}
+
+function displayResult(result){
+	// Generic function to display any set of record
+	var data;
+	var json;
+	var line;
+
+	for(var i = 0; i < result.length ; i++){
+		json = result[i];
+		line = "<tr>"
+		for (var property in json) {
+			if (json.hasOwnProperty(property)) {
+				data = json[property];
+				line += "<td>" + JSON.stringify(data) + "</td>";
+			}
+		}
+		line += "</tr>"
+		$('#resultTable').append(line);
+	}
+}
 
 function callENV() {
 	//Se debe autenticarse en Sb1 http://52.42.196.23:8000/sap/sbo/portal/
