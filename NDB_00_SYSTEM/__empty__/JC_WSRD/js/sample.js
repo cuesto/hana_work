@@ -8,9 +8,27 @@ $(document).ready(function(){
 	});
 
 	$("#btn2").click(function(){
-		$("h2").fadeOut();
+		callODATA()
 	});
+	
+	$("#btn3").click(function(){
+		callENV()
+	});
+	
 });
+
+function callENV() {
+	//Se debe autenticarse en Sb1 http://52.42.196.23:8000/sap/sbo/portal/
+	$.get('/sap/sbo/platform/env', function() {
+		
+	})
+	.done(function(json){
+		alert(JSON.stringify(json));
+	})
+	.fail(function(){
+		alert("Fail");
+	})
+}
 
 function callXSJS() {
 	$.ajax({
@@ -24,6 +42,20 @@ function callXSJS() {
 		}
 	});
 }
+
+function callODATA() {
+	$.ajax({
+		type: "GET",
+		url: "odata/b1services.xsodata/BusinessPartners?$format=json&$select=CardName,CardCode,CardType,Balance",
+		error: function(xhr,status,error){
+			alert("Fail - "+ status);
+		},
+		success: function(json){
+			displayODATA(json);
+		}
+	});
+}
+
 
 function displayXSJS(json){
 	
@@ -50,6 +82,33 @@ function displayXSJS(json){
 	};
 }
 
+function displayODATA(json){
+	
+	//Header
+	$("#resultTable thead").append(
+			"<tr>"	+
+			"<th>#</th>"	+
+			"<th>Code</th>" +
+			"<th>Name</th>"+
+			"<th>Type</th>"+
+			"<th>Balance</th>"+
+	"</tr>");
+
+	var jsonArr = [];
+	var item = {};
+
+	//Lines	
+	for (var i=0;i<json.d.results.length;i++){
+		$("#resultTable tbody").append(
+				"<tr>"+
+				"<td>"+i+"</td>"+				
+				"<td>"+json.d.results[i].CardCode+"</td>"+
+				"<td>"+json.d.results[i].CardName+"</td>"+
+				"<td>"+json.d.results[i].CardType+"</td>"+
+				"<td>"+json.d.results[i].Balance+"</td>"+
+				"</tr>");
+	}
+}
 
 
 //create new elements
@@ -70,4 +129,4 @@ var b = 20;
 var c = 'The sum of a + b is -> ' + (a+b);
 
 //Pops an Alert to user
-alert(c);
+//alert(c);

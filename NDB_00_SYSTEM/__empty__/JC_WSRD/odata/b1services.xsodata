@@ -1,4 +1,10 @@
 //http://52.42.196.23:8000/JC_WSRD/odata/b1services.xsodata/SalesByGroup?$format=json
+//http://52.42.196.23:8000/JC_WSRD/odata/b1services.xsodata/BusinessPartners?$format=json&$select=CardName,CardCode
+//http://52.42.196.23:8000/JC_WSRD/odata/b1services.xsodata/BusinessPartners?$format=json&$select=CardName,CardCode&$filter=CardType eq 'L'&$top=2
+
+/* Lectura Metadata */
+//http://52.42.196.23:8000/JC_WSRD/odata/b1services.xsodata/$metadata
+
 service  { 
 
 "_SYS_BIC"."JC_WSRD.model/JC_CA_SALES" as "SalesByGroup" keys ("GroupCode");
