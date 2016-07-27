@@ -70,4 +70,4 @@ var b = 20;
 var c = 'The sum of a + b is -> ' + (a+b);
 
 //Pops an Alert to user
-//alert(c);
+alert(c);
