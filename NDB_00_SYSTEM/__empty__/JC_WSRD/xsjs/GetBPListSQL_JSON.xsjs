@@ -1,3 +1,4 @@
+//http://52.42.196.23:8000/JC_WSRD/xsjs/GetBPListSQL_JSON.xsjs
 function getBPJSON(bpType){
 	$.response.contentType = "application/json";
 	var conn = $.hdb.getConnection();

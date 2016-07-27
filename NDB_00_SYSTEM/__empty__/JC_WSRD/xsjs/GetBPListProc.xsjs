@@ -1,3 +1,4 @@
+//http://52.42.196.23:8000/JC_WSRD/xsjs/GetBPListProc.xsjs?bpType=C
 function showData(dbType){
 	$.response.contentType = "application/json";
 	var conn = $.hdb.getConnection();

@@ -1,3 +1,4 @@
+//http://52.42.196.23:8000/JC_WSRD/xsjs/GetBPListSQL_Params.xsjs?bpType=C&top=10
 var conn = null, rs = null;
 
 function showData(query, bpType, topNb){
