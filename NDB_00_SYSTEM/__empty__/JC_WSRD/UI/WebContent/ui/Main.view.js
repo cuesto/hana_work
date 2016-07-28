@@ -23,7 +23,7 @@ createShell : function (oController)
         appIcon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/640px-SAP_2011_logo.svg.png",
         appIconTooltip: "SAP logo",
         showLogoutButton: true,
-        //showSearchTool: true,
+        showSearchTool: true,
         showInspectorTool: true,
         showFeederTool: true,
         worksetItems: [new sap.ui.ux3.NavigationItem("WI_1",{key:"wi_1",text:"XS OData"}),
@@ -51,9 +51,7 @@ createShell : function (oController)
             var oShell = oEvent.oSource;
 				
 				
-            switch (sId) {
-                /** - Move this Comment Line as long as the views below are implemented
-
+            switch (sId) {               
 				case "WI_1":
 					var view = sap.ui.view({viewName:"ui.odata", type:sap.ui.core.mvc.ViewType.JS});
 					oShell.setContent(view, true);
@@ -68,7 +66,6 @@ createShell : function (oController)
 					var view = sap.ui.view({viewName:"ui.xsjs", type:sap.ui.core.mvc.ViewType.JS});
 					oShell.setContent(view, true);
 					break;
-				 **/
                 default:
                     break;
             }
