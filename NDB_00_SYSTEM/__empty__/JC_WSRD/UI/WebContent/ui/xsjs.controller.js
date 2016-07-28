@@ -9,6 +9,42 @@ sap.ui.controller("ui.xsjs", {
 //
 //	},
 
+
+populateXSJSTable : function(srvcType, rows)
+{
+	var xsjsUrl = "../../xsjs/GetBPListSQL_Params.xsjs?bpType="+srvcType+"&top="+rows;
+
+	//jQuery Call
+	$.ajax({
+		url: xsjsUrl,
+		method: 'GET',
+		dataType: 'json',
+		success: this.onCompleteCall,
+		error: this.onErrorCall
+	});
+},
+
+onCompleteCall: function(result)
+{
+	var oTable = sap.ui.getCore().byId("ID_BP_Table3");
+	var oModelBP = new sap.ui.model.json.JSONModel();
+	oModelBP.setData(result);
+
+	oTable.setModel(oModelBP);
+
+	//bind table to an specific oData service
+	oTable.bindRows("/");
+},
+
+onErrorCall: function(jqXHR, textStatus, errorThrown)
+{
+	sap.ui.commons.MessageBox.show(jqXHR.responseText,
+		"ERROR",
+		"Error in calling service");
+	return;
+},
+
+
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 * (NOT before the first rendering! onInit() is used for that one!).

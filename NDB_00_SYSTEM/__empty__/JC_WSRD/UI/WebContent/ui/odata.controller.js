@@ -19,7 +19,7 @@ sap.ui.controller("ui.odata", {
 	populateSalesTable: function()
 	{
 		//Pop up function was called
-		alert("Sales by BP Populate by XSOData: ");
+		//alert("Sales by BP Populate by XSOData: ");
 
 		//load table created on the view
 		var oTable = sap.ui.getCore().byId("ID_SALES_TABLE");
