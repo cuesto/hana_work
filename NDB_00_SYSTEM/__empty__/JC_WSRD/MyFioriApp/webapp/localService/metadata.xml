@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema Namespace="fiori.services"
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="docType">
+                <Key>
+                    <PropertyRef Name="DocEntry" />
+                </Key>
+                <Property Name="DocEntry" Type="Edm.Int32" Nullable="false" />
+                <Property Name="DocNum" Type="Edm.Int32" />
+                <Property Name="DocType" Type="Edm.String" DefaultValue="I" MaxLength="1" />
+                <Property Name="CANCELED" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Handwrtten" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Printed" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="DocStatus" Type="Edm.String" DefaultValue="O" MaxLength="1" />
+                <Property Name="InvntSttus" Type="Edm.String" DefaultValue="O" MaxLength="1" />
+                <Property Name="Transfered" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="ObjType" Type="Edm.String" DefaultValue="13" MaxLength="20" />
+                <Property Name="DocDate" Type="Edm.DateTime" />
+                <Property Name="DocDueDate" Type="Edm.DateTime" />
+                <Property Name="CardCode" Type="Edm.String" MaxLength="15" />
+                <Property Name="CardName" Type="Edm.String" MaxLength="100" />
+                <Property Name="Address" Type="Edm.String" MaxLength="254" />
+                <Property Name="NumAtCard" Type="Edm.String" MaxLength="100" />
+                <Property Name="VatPercent" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="VatSum" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="VatSumFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DiscPrcnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DiscSum" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DiscSumFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DocCur" Type="Edm.String" MaxLength="3" />
+                <Property Name="DocRate" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DocTotal" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DocTotalFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidToDate" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="GrosProfit" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="GrosProfFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="Ref1" Type="Edm.String" MaxLength="11" />
+                <Property Name="Ref2" Type="Edm.String" MaxLength="11" />
+                <Property Name="Comments" Type="Edm.String" MaxLength="254" />
+                <Property Name="JrnlMemo" Type="Edm.String" MaxLength="50" />
+                <Property Name="TransId" Type="Edm.Int32" />
+                <Property Name="ReceiptNum" Type="Edm.Int32" />
+                <Property Name="GroupNum" Type="Edm.Int16" />
+                <Property Name="DocTime" Type="Edm.Int16" />
+                <Property Name="SlpCode" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="TrnspCode" Type="Edm.Int16" DefaultValue="-1" />
+                <Property Name="PartSupply" Type="Edm.String" DefaultValue="Y" MaxLength="1" />
+                <Property Name="Confirmed" Type="Edm.String" DefaultValue="Y" MaxLength="1" />
+                <Property Name="GrossBase" Type="Edm.Int16" DefaultValue="0" />
+                <Property Name="ImportEnt" Type="Edm.Int32" />
+                <Property Name="CreateTran" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="SummryType" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="UpdInvnt" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="UpdCardBal" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Instance" Type="Edm.Int16" DefaultValue="0" />
+                <Property Name="Flags" Type="Edm.Int32" DefaultValue="0" />
+                <Property Name="InvntDirec" Type="Edm.String" DefaultValue="X" MaxLength="1" />
+                <Property Name="CntctCode" Type="Edm.Int32" />
+                <Property Name="ShowSCN" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="FatherCard" Type="Edm.String" MaxLength="15" />
+                <Property Name="SysRate" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CurSource" Type="Edm.String" DefaultValue="C" MaxLength="1" />
+                <Property Name="VatSumSy" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DiscSumSy" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DocTotalSy" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidSys" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FatherType" Type="Edm.String" DefaultValue="P" MaxLength="1" />
+                <Property Name="GrosProfSy" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="UpdateDate" Type="Edm.DateTime" />
+                <Property Name="IsICT" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="CreateDate" Type="Edm.DateTime" />
+                <Property Name="Volume" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="VolUnit" Type="Edm.Int16" />
+                <Property Name="Weight" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="WeightUnit" Type="Edm.Int16" />
+                <Property Name="Series" Type="Edm.Int16" />
+                <Property Name="TaxDate" Type="Edm.DateTime" />
+                <Property Name="Filler" Type="Edm.String" MaxLength="8" />
+                <Property Name="DataSource" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="StampNum" Type="Edm.String" MaxLength="16" />
+                <Property Name="isCrin" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="FinncPriod" Type="Edm.Int32" />
+                <Property Name="UserSign" Type="Edm.Int16" />
+                <Property Name="selfInv" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="VatPaid" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="VatPaidFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="VatPaidSys" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="UserSign2" Type="Edm.Int16" />
+                <Property Name="WddStatus" Type="Edm.String" DefaultValue="-" MaxLength="1" />
+                <Property Name="draftKey" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="TotalExpns" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TotalExpFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TotalExpSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DunnLevel" Type="Edm.Int32" />
+                <Property Name="Address2" Type="Edm.String" MaxLength="254" />
+                <Property Name="LogInstanc" Type="Edm.Int32" DefaultValue="0" />
+                <Property Name="Exported" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="StationID" Type="Edm.Int32" />
+                <Property Name="Indicator" Type="Edm.String" MaxLength="2" />
+                <Property Name="NetProc" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="AqcsTax" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="AqcsTaxFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="AqcsTaxSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CashDiscPr" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CashDiscnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CashDiscFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CashDiscSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ShipToCode" Type="Edm.String" MaxLength="50" />
+                <Property Name="LicTradNum" Type="Edm.String" MaxLength="32" />
+                <Property Name="PaymentRef" Type="Edm.String" MaxLength="27" />
+                <Property Name="WTSum" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="WTSumFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="WTSumSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="RoundDif" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="RoundDifFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="RoundDifSy" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CheckDigit" Type="Edm.String" MaxLength="1" />
+                <Property Name="Form1099" Type="Edm.Int32" />
+                <Property Name="Box1099" Type="Edm.String" MaxLength="20" />
+                <Property Name="submitted" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="PoPrss" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Rounding" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="RevisionPo" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Segment" Type="Edm.Int16" DefaultValue="0" />
+                <Property Name="ReqDate" Type="Edm.DateTime" />
+                <Property Name="CancelDate" Type="Edm.DateTime" />
+                <Property Name="PickStatus" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Pick" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BlockDunn" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="PeyMethod" Type="Edm.String" MaxLength="15" />
+                <Property Name="PayBlock" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="PayBlckRef" Type="Edm.Int32" />
+                <Property Name="MaxDscn" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Reserve" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Max1099" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CntrlBnk" Type="Edm.String" MaxLength="15" />
+                <Property Name="PickRmrk" Type="Edm.String" MaxLength="254" />
+                <Property Name="ISRCodLine" Type="Edm.String" MaxLength="53" />
+                <Property Name="ExpAppl" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExpApplFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExpApplSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="Project" Type="Edm.String" MaxLength="20" />
+                <Property Name="DeferrTax" Type="Edm.String" MaxLength="1" />
+                <Property Name="LetterNum" Type="Edm.String" MaxLength="20" />
+                <Property Name="FromDate" Type="Edm.DateTime" />
+                <Property Name="ToDate" Type="Edm.DateTime" />
+                <Property Name="WTApplied" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="WTAppliedF" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BoeReserev" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="AgentCode" Type="Edm.String" MaxLength="32" />
+                <Property Name="WTAppliedS" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="EquVatSum" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="EquVatSumF" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="EquVatSumS" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="Installmnt" Type="Edm.Int16" DefaultValue="1" />
+                <Property Name="VATFirst" Type="Edm.String" MaxLength="1" />
+                <Property Name="NnSbAmnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="NnSbAmntSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="NbSbAmntFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExepAmnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExepAmntSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExepAmntFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="VatDate" Type="Edm.DateTime" />
+                <Property Name="CorrExt" Type="Edm.String" MaxLength="25" />
+                <Property Name="CorrInv" Type="Edm.Int32" />
+                <Property Name="NCorrInv" Type="Edm.Int32" />
+                <Property Name="CEECFlag" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BaseAmnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseAmntSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseAmntFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CtlAccount" Type="Edm.String" MaxLength="15" />
+                <Property Name="BPLId" Type="Edm.Int32" />
+                <Property Name="BPLName" Type="Edm.String" MaxLength="100" />
+                <Property Name="VATRegNum" Type="Edm.String" MaxLength="32" />
+                <Property Name="TxInvRptNo" Type="Edm.String" MaxLength="10" />
+                <Property Name="TxInvRptDt" Type="Edm.DateTime" />
+                <Property Name="KVVATCode" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="WTDetails" Type="Edm.String" MaxLength="100" />
+                <Property Name="SumAbsId" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="SumRptDate" Type="Edm.DateTime" />
+                <Property Name="PIndicator" Type="Edm.String" DefaultValue=" " MaxLength="10" />
+                <Property Name="ManualNum" Type="Edm.String" MaxLength="20" />
+                <Property Name="UseShpdGd" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BaseVtAt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseVtAtSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseVtAtFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="NnSbVAt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="NnSbVAtSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="NbSbVAtFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExptVAt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExptVAtSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExptVAtFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="LYPmtAt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="LYPmtAtSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="LYPmtAtFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExpAnSum" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExpAnSys" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ExpAnFrgn" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DocSubType" Type="Edm.String" DefaultValue="--" MaxLength="2" />
+                <Property Name="DpmStatus" Type="Edm.String" DefaultValue="O" MaxLength="1" />
+                <Property Name="DpmAmnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmAmntSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmAmntFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmDrawn" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="DpmPrcnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidSum" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidSumFc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidSumSc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FolioPref" Type="Edm.String" MaxLength="4" />
+                <Property Name="FolioNum" Type="Edm.Int32" />
+                <Property Name="DpmAppl" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmApplFc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmApplSc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="LPgFolioN" Type="Edm.Int32" />
+                <Property Name="Header" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="Footer" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="Posted" Type="Edm.String" DefaultValue="Y" MaxLength="1" />
+                <Property Name="OwnerCode" Type="Edm.Int32" />
+                <Property Name="BPChCode" Type="Edm.String" MaxLength="15" />
+                <Property Name="BPChCntc" Type="Edm.Int32" />
+                <Property Name="PayToCode" Type="Edm.String" MaxLength="50" />
+                <Property Name="IsPaytoBnk" Type="Edm.String" MaxLength="1" />
+                <Property Name="BnkCntry" Type="Edm.String" MaxLength="3" />
+                <Property Name="BankCode" Type="Edm.String" MaxLength="30" />
+                <Property Name="BnkAccount" Type="Edm.String" MaxLength="50" />
+                <Property Name="BnkBranch" Type="Edm.String" MaxLength="50" />
+                <Property Name="isIns" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="TrackNo" Type="Edm.String" MaxLength="30" />
+                <Property Name="VersionNum" Type="Edm.String" MaxLength="11" />
+                <Property Name="LangCode" Type="Edm.Int32" />
+                <Property Name="BPNameOW" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BillToOW" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="ShipToOW" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="RetInvoice" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="ClsDate" Type="Edm.DateTime" />
+                <Property Name="MInvNum" Type="Edm.Int32" />
+                <Property Name="MInvDate" Type="Edm.DateTime" />
+                <Property Name="SeqCode" Type="Edm.Int16" />
+                <Property Name="Serial" Type="Edm.Int32" />
+                <Property Name="SeriesStr" Type="Edm.String" MaxLength="3" />
+                <Property Name="SubStr" Type="Edm.String" MaxLength="3" />
+                <Property Name="Model" Type="Edm.String" DefaultValue="0" MaxLength="6" />
+                <Property Name="TaxOnExp" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TaxOnExpFc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TaxOnExpSc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TaxOnExAp" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TaxOnExApF" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TaxOnExApS" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="LastPmnTyp" Type="Edm.String" MaxLength="1" />
+                <Property Name="LndCstNum" Type="Edm.Int32" />
+                <Property Name="UseCorrVat" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BlkCredMmo" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="OpenForLaC" Type="Edm.String" DefaultValue="Y" MaxLength="1" />
+                <Property Name="Excised" Type="Edm.String" DefaultValue="O" MaxLength="1" />
+                <Property Name="ExcRefDate" Type="Edm.DateTime" />
+                <Property Name="ExcRmvTime" Type="Edm.String" MaxLength="8" />
+                <Property Name="SrvGpPrcnt" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DepositNum" Type="Edm.Int32" />
+                <Property Name="CertNum" Type="Edm.String" MaxLength="31" />
+                <Property Name="DutyStatus" Type="Edm.String" DefaultValue="Y" MaxLength="1" />
+                <Property Name="AutoCrtFlw" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="FlwRefDate" Type="Edm.DateTime" />
+                <Property Name="FlwRefNum" Type="Edm.String" MaxLength="100" />
+                <Property Name="VatJENum" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="DpmVat" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmVatFc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmVatSc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmAppVat" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmAppVatF" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="DpmAppVatS" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="InsurOp347" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="IgnRelDoc" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BuildDesc" Type="Edm.String" MaxLength="50" />
+                <Property Name="ResidenNum" Type="Edm.String" DefaultValue="1" MaxLength="1" />
+                <Property Name="Checker" Type="Edm.Int32" />
+                <Property Name="Payee" Type="Edm.Int32" />
+                <Property Name="CopyNumber" Type="Edm.Int32" DefaultValue="0" />
+                <Property Name="SSIExmpt" Type="Edm.String" MaxLength="1" />
+                <Property Name="PQTGrpSer" Type="Edm.Int16" />
+                <Property Name="PQTGrpNum" Type="Edm.Int32" />
+                <Property Name="PQTGrpHW" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="ReopOriDoc" Type="Edm.String" MaxLength="1" />
+                <Property Name="ReopManCls" Type="Edm.String" MaxLength="1" />
+                <Property Name="DocManClsd" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="ClosingOpt" Type="Edm.Int16" DefaultValue="1" />
+                <Property Name="SpecDate" Type="Edm.DateTime" />
+                <Property Name="Ordered" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="NTSApprov" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="NTSWebSite" Type="Edm.Int16" />
+                <Property Name="NTSeTaxNo" Type="Edm.String" MaxLength="50" />
+                <Property Name="NTSApprNo" Type="Edm.String" MaxLength="50" />
+                <Property Name="PayDuMonth" Type="Edm.String" MaxLength="1" />
+                <Property Name="ExtraMonth" Type="Edm.Int16" />
+                <Property Name="ExtraDays" Type="Edm.Int16" />
+                <Property Name="CdcOffset" Type="Edm.Int16" DefaultValue="0" />
+                <Property Name="SignMsg" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="SignDigest" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="CertifNum" Type="Edm.String" MaxLength="50" />
+                <Property Name="KeyVersion" Type="Edm.Int32" />
+                <Property Name="EDocGenTyp" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="ESeries" Type="Edm.Int16" />
+                <Property Name="EDocNum" Type="Edm.String" MaxLength="50" />
+                <Property Name="EDocExpFrm" Type="Edm.Int32" />
+                <Property Name="OnlineQuo" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="POSEqNum" Type="Edm.String" MaxLength="20" />
+                <Property Name="POSManufSN" Type="Edm.String" MaxLength="20" />
+                <Property Name="POSCashN" Type="Edm.Int32" />
+                <Property Name="EDocStatus" Type="Edm.String" DefaultValue="C" MaxLength="1" />
+                <Property Name="EDocCntnt" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="EDocProces" Type="Edm.String" DefaultValue="C" MaxLength="1" />
+                <Property Name="EDocErrCod" Type="Edm.String" MaxLength="50" />
+                <Property Name="EDocErrMsg" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="EDocCancel" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="EDocTest" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="EDocPrefix" Type="Edm.String" MaxLength="10" />
+                <Property Name="CUP" Type="Edm.Int32" />
+                <Property Name="CIG" Type="Edm.Int32" />
+                <Property Name="DpmAsDscnt" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="Attachment" Type="Edm.String" MaxLength="2147483647" />
+                <Property Name="AtcEntry" Type="Edm.Int32" />
+                <Property Name="SupplCode" Type="Edm.String" MaxLength="254" />
+                <Property Name="GTSRlvnt" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="BaseDisc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseDiscSc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseDiscFc" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="BaseDiscPr" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="CreateTS" Type="Edm.Int32" />
+                <Property Name="UpdateTS" Type="Edm.Int32" />
+                <Property Name="SrvTaxRule" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="AnnInvDecR" Type="Edm.Int32" />
+                <Property Name="Supplier" Type="Edm.String" MaxLength="15" />
+                <Property Name="Releaser" Type="Edm.Int32" />
+                <Property Name="Receiver" Type="Edm.Int32" />
+                <Property Name="ToWhsCode" Type="Edm.String" MaxLength="8" />
+                <Property Name="AssetDate" Type="Edm.DateTime" />
+                <Property Name="Requester" Type="Edm.String" MaxLength="25" />
+                <Property Name="ReqName" Type="Edm.String" MaxLength="155" />
+                <Property Name="Branch" Type="Edm.Int16" />
+                <Property Name="Department" Type="Edm.Int16" />
+                <Property Name="Email" Type="Edm.String" MaxLength="100" />
+                <Property Name="Notify" Type="Edm.String" MaxLength="1" />
+                <Property Name="ReqType" Type="Edm.Int32" DefaultValue="12" />
+                <Property Name="OriginType" Type="Edm.String" DefaultValue="M" MaxLength="1" />
+                <Property Name="IsReuseNum" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="IsReuseNFN" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="DocDlvry" Type="Edm.String" MaxLength="1" />
+                <Property Name="PaidDpm" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidDpmF" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="PaidDpmS" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="EnvTypeNFe" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="AgrNo" Type="Edm.Int32" />
+                <Property Name="IsAlt" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="AltBaseTyp" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="AltBaseEnt" Type="Edm.Int32" />
+                <Property Name="AuthCode" Type="Edm.String" MaxLength="250" />
+                <Property Name="StDlvDate" Type="Edm.DateTime" />
+                <Property Name="StDlvTime" Type="Edm.Int32" />
+                <Property Name="EndDlvDate" Type="Edm.DateTime" />
+                <Property Name="EndDlvTime" Type="Edm.Int32" />
+                <Property Name="VclPlate" Type="Edm.String" MaxLength="20" />
+                <Property Name="ElCoStatus" Type="Edm.String" MaxLength="10" />
+                <Property Name="AtDocType" Type="Edm.String" MaxLength="2" />
+                <Property Name="ElCoMsg" Type="Edm.String" MaxLength="254" />
+                <Property Name="PrintSEPA" Type="Edm.String" DefaultValue="N" MaxLength="1" />
+                <Property Name="FreeChrg" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FreeChrgFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FreeChrgSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="NfeValue" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FiscDocNum" Type="Edm.String" MaxLength="100" />
+                <Property Name="RelatedTyp" Type="Edm.Int32" DefaultValue="-1" />
+                <Property Name="RelatedEnt" Type="Edm.Int32" />
+                <Property Name="CCDEntry" Type="Edm.Int32" />
+                <Property Name="NfePrntFo" Type="Edm.Int32" DefaultValue="0" />
+                <Property Name="ZrdAbs" Type="Edm.Int32" />
+                <Property Name="POSRcptNo" Type="Edm.Int32" />
+                <Property Name="FoCTax" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FoCTaxFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FoCTaxSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="TpCusPres" Type="Edm.Int32" />
+                <Property Name="ExcDocDate" Type="Edm.DateTime" />
+                <Property Name="FoCFrght" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FoCFrghtFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="FoCFrghtSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="InterimTyp" Type="Edm.Int16" DefaultValue="0" />
+                <Property Name="PTICode" Type="Edm.String" MaxLength="5" />
+                <Property Name="Letter" Type="Edm.String" MaxLength="1" />
+                <Property Name="FolNumFrom" Type="Edm.Int32" />
+                <Property Name="FolNumTo" Type="Edm.Int32" />
+                <Property Name="FolSeries" Type="Edm.Int32" />
+                <Property Name="SplitTax" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="SplitTaxFC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="SplitTaxSC" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="ToBinCode" Type="Edm.String" MaxLength="228" />
+                <NavigationProperty Name="ar_doc" Relationship="fiori.services.ar_docType" FromRole="docDependent" ToRole="linesPrincipal" />
+            </EntityType>
+            <EntityType Name="linesType">
+                <Key>
+                    <PropertyRef Name="DocEntry" />
+                    <PropertyRef Name="LineNum" />
+                </Key>
+                <Property Name="DocEntry" Type="Edm.Int32" Nullable="false" />
+                <Property Name="LineNum" Type="Edm.Int32" Nullable="false" />
+                <Property Name="ItemCode" Type="Edm.String" MaxLength="50" />
+                <Property Name="Quantity" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="Price" Type="Edm.Decimal" Precision="21" Scale="6" />
+                <Property Name="LineTotal" Type="Edm.Decimal" Precision="21" Scale="6" />
+            </EntityType>
+            <Association Name="ar_docType">
+                <End Type="fiori.services.linesType" Role="linesPrincipal" Multiplicity="*"/>
+                <End Type="fiori.services.docType" Role="docDependent" Multiplicity="*"/>
+            </Association>
+            <EntityContainer Name="fiori" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="doc" EntityType="fiori.services.docType" />
+                <EntitySet Name="lines" EntityType="fiori.services.linesType" />
+                <AssociationSet Name="ar_doc" Association="fiori.services.ar_docType">
+                    <End Role="linesPrincipal" EntitySet="lines"/>
+                    <End Role="docDependent" EntitySet="doc"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
