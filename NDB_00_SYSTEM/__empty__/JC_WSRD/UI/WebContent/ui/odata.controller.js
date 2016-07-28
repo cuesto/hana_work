@@ -5,9 +5,28 @@ sap.ui.controller("ui.odata", {
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf ui.odata
 */
-//	onInit: function() {
-//
-//	},
+	onInit: function() {
+		//Create model to Load the XSOData
+		var oModelBP = new sap.ui.model.odata.ODataModel("../../odata/b1services.xsodata");
+
+		// load the table we created in the view
+		var oTable = sap.ui.getCore().byId("ID_SALES_TABLE");
+
+		//attach the model to the table
+		oTable.setModel(oModelBP);
+	},
+
+	populateSalesTable: function()
+	{
+		//Pop up function was called
+		alert("Sales by BP Populate by XSOData: ");
+
+		//load table created on the view
+		var oTable = sap.ui.getCore().byId("ID_SALES_TABLE");
+
+		//bind table to an specific oData service
+		oTable.bindRows("/SalesByGroup");
+	}
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

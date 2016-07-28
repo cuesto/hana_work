@@ -58,10 +58,10 @@ sap.ui.jsview("ui.odata", {
 
 		oTable.addColumn(new sap.ui.table.Column(
 		{
-			label: new sap.ui.commons.Label({ text: "GrossProfit"}),
-			template: new sap.ui.commons.TextView().bindProperty("text", "GrossProfit"),
-			sortProperty: "GrossProfit",
-			filterProperty: "GrossProfit"
+			label: new sap.ui.commons.Label({ text: "GrosProfit"}),
+			template: new sap.ui.commons.TextView().bindProperty("text", "GrosProfit"),
+			sortProperty: "GrosProfit",
+			filterProperty: "GrosProfit"
 		}));
 
 
